@@ -67,12 +67,6 @@
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/filepaths" />
         </provider>
-
-        <!-- TWA service (handles Custom Tabs connection) -->
-        <service
-            android:name="com.google.androidbrowserhelper.trusted.TwaProviderPicker"
-            android:enabled="@bool/enableNotification"
-            android:exported="false" />
     </application>
 
 </manifest>
