@@ -1,0 +1,50 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace 'com.timbrica.app'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "com.timbrica.app"
+        minSdk 19
+        targetSdk 34
+        versionCode 1
+        versionName "1.0.0"
+
+        // TWA: Digital Asset Links validation
+        manifestPlaceholders = [
+            hostName    : "timbrica.com",
+            defaultUrl  : "https://timbrica.com/",
+            launcherName: "Timbrica",
+            assetStatements: '[{ "relation": ["delegate_permission/common.handle_all_urls"], "target": { "namespace": "web", "site": "https://timbrica.com" } }]'
+        ]
+    }
+
+    signingConfigs {
+        release {
+            storeFile file("../android.keystore")
+            storePassword "timbrica2026"
+            keyAlias "timbrica"
+            keyPassword "timbrica2026"
+        }
+    }
+
+    buildTypes {
+        release {
+            signingConfig signingConfigs.release
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt')
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation 'com.google.androidbrowserhelper:androidbrowserhelper:2.5.0'
+}

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.Timbrica" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:windowBackground">#FF0a0f1a</item>
+        <item name="android:statusBarColor">#FF0a0f1a</item>
+        <item name="android:navigationBarColor">#FF0a0f1a</item>
+    </style>
+
+    <style name="Theme.Timbrica.Splash" parent="Theme.Timbrica">
+        <item name="android:windowBackground">@drawable/splash</item>
+    </style>
+</resources>

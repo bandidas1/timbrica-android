@@ -1,0 +1,2 @@
+rootProject.name = 'timbrica-android'
+include ':app'
